@@ -1,6 +1,6 @@
 # 🤖 Futuristic NLP Sentiment Analyzer
 
-A cutting-edge NLP project that analyzes movie reviews and predicts their sentiment (positive/negative) using **TF-IDF + Logistic Regression**. It’s packed with rich **3D visualizations**, **animated heatmaps**, and **ML explainability tools** — all wrapped in an interactive pipeline, topped off with a chatbot.
+A cutting-edge NLP project that analyzes movie reviews and predicts their sentiment (positive/negative) using **TF-IDF + Logistic Regression**. It's packed with rich **3D visualizations**, **animated heatmaps**, and **ML explainability tools** — all wrapped in an interactive pipeline, topped off with a chatbot.
 
 ---
 
@@ -11,7 +11,7 @@ A cutting-edge NLP project that analyzes movie reviews and predicts their sentim
 - [🧹 NLP Pipeline](#-nlp-pipeline)
 - [📈 Model Performance](#-model-performance)
 - [📊 Visualizations](#-visualizations)
-- [🤖 Chatbot](#-chatbot)
+- [🤖 Chatbot Interface](#-chatbot-interface)
 - [💡 How to Run](#-how-to-run)
 - [📸 Output Gallery](#-output-gallery)
 - [🙌 Credits](#-credits)
@@ -19,73 +19,117 @@ A cutting-edge NLP project that analyzes movie reviews and predicts their sentim
 ---
 
 ## 📌 Project Highlights
-| Feature | Description |
-|--------|-------------|
-| 🧹 Text Preprocessing | Lowercasing, punctuation removal, lemmatization, and stopword removal using SpaCy + NLTK |
-| 🧠 Model | TF-IDF + Logistic Regression with 88% accuracy |
-| 🔮 Prediction | Real-time review classification |
-| 📊 3D Visuals | PCA-based dimensionality reduction for interactive 3D plots |
-| 🔥 Heatmaps | Animated heatmaps showing sentiment evolution |
-| ☁️ WordClouds | Dual views for positive & negative vocabularies |
-| 🤖 Chatbot | Text-based prediction assistant built right into the notebook |
+
+| Feature              | Description |
+|----------------------|-------------|
+| 🧹 Text Preprocessing | Lowercasing, punctuation removal, lemmatization, and stopword removal using **SpaCy + NLTK** |
+| 🧠 Model             | **TF-IDF + Logistic Regression** with 88% accuracy |
+| 🔮 Prediction        | Real-time review classification |
+| 📊 3D Visuals        | PCA-based dimensionality reduction for interactive 3D plots |
+| 🔥 Heatmaps          | Animated heatmaps showing sentiment evolution |
+| ☁️ WordClouds        | Dual views for positive & negative vocabularies |
+| 🤖 Chatbot           | Real-time sentiment prediction using custom text input |
 
 ---
 
 ## 📂 Dataset
-- **Source**: Hugging Face `imdb` dataset
+- **Source**: Hugging Face [`imdb`](https://huggingface.co/datasets/imdb)
 - **Size**: 25,000 training + 25,000 test reviews
 
 ```python
 from datasets import load_dataset
 dataset = load_dataset("imdb")
+```
 
-## 📂 Tech Stack
-Component	Libraries Used
-NLP	SpaCy, NLTK
-ML Modeling	Scikit-learn
-Visualization	Matplotlib, Seaborn, Plotly, WordCloud
-Data Handling	Pandas, HuggingFace Datasets
+## ⚙️ Tech Stack
 
-## 📂 NLP Pipeline
+| Component      | Libraries Used                               |
+|----------------|----------------------------------------------|
+| NLP            | SpaCy, NLTK                                  |
+| ML Modeling    | Scikit-learn                                 |
+| Visualization  | Matplotlib, Seaborn, Plotly, WordCloud       |
+| Data Handling  | Pandas, HuggingFace Datasets                 |
 
-# Steps:
-1. Lowercase and remove punctuation
-2. Tokenize & remove stopwords
-3. Lemmatize using SpaCy
-4. Convert text to TF-IDF vectors
+## 🧹 NLP Pipeline
 
-## 📂 Model Performance
-Accuracy: 88%
-Precision: 0.93 (Neg) / 0.84 (Pos)
-Recall: 0.82 (Neg) / 0.94 (Pos)
-F1 Score: 0.88
+1. Lowercase & punctuation removal
+2. Tokenization & stopword filtering
+3. Lemmatization using SpaCy
+4. TF-IDF Vectorization
 
-📊 Visualizations
-![image](https://github.com/user-attachments/assets/46a6aef5-bd96-41b6-aa54-1439d41e6f07)
-![newplot (4)](https://github.com/user-attachments/assets/e1afb449-6e5e-4d46-996f-3d1c5eceb91c)
-![image](https://github.com/user-attachments/assets/2ab8da8d-8d4b-4c28-bf7d-006345ed924f)
-![newplot (2)](https://github.com/user-attachments/assets/cc9c63b0-3a69-47d3-8a36-4cff97b4d9ad)
-![newplot (3)](https://github.com/user-attachments/assets/997fa96f-e026-44f8-8427-8ced4adfab10)
-![image](https://github.com/user-attachments/assets/52986efd-2130-4da6-8bf4-17fe826651d9)
+✅ Final TF-IDF Shape: (800, 5000)
 
-🤖 Chatbot Interface
-Interact directly with the model:
+## 📈 Model Performance
 
+- Accuracy: 88%
+- Precision: 0.93 (Neg) / 0.84 (Pos)
+- Recall: 0.82 (Neg) / 0.94 (Pos)
+- F1 Score: 0.88
+
+## 📊 Visualizations
+
+### 📌 Confusion Matrix
+Clear separation of true positives and negatives.
+
+![Confusion Matrix](https://github.com/user-attachments/assets/893e8ee1-f61a-4660-a3e7-e6d39fe214db)
+
+### 📌 3D PCA Scatter Plot
+Actual vs predicted samples in 3D sentiment space.
+
+![3D PCA Plot](https://github.com/user-attachments/assets/e353a703-8345-4786-b417-7fada29668cd)
+
+### 📌 Classification Report
+
+![Classification Report](https://github.com/user-attachments/assets/f2fc190e-0d85-440c-946f-0d7db19dd7d8)
+
+### 📌 Animated Heatmap
+Visualizes sentiment confidence over time.
+
+![Animated Heatmap](https://github.com/user-attachments/assets/8f08f13a-8cb9-450d-9856-973f0601d9d9)
+
+### 📌 Feature Importance (Weights)
+Shows most influential words contributing to classification.
+
+![Feature Importance](https://github.com/user-attachments/assets/a241079b-6732-4991-a5a8-01c2641f3cda)
+
+### 📌 Dual WordClouds
+Common words in Positive vs Negative reviews.
+
+## 🤖 Chatbot Interface
+
+```python
 predict_sentiment("I absolutely loved the movie! The acting was amazing.")
-Example Results:
+```
 
-"This movie was so boring and predictable" → Negative
-"One of the best performances I've ever seen!" → Positive
-💡 How to Run
-Clone the repo or open the NLP.ipynb in Google Colab.
-Install dependencies:
+Sample Results:
+- "This movie was so boring and predictable" → Negative
+- "One of the best performances I've ever seen!" → Positive
 
+## 💡 How to Run
+
+1. Clone this repo or open NLP.ipynb in Google Colab
+2. Install dependencies:
+```bash
 pip install -q spacy wordcloud scikit-learn plotly nltk
 python -m spacy download en_core_web_sm
-Run all cells and interact with the chatbot near the end!
+```
+3. Run all cells.
+4. Use the chatbot section to test real-time inputs!
 
-🙌 Credits
-Dataset: IMDb Dataset
-Inspired by modern ML storytelling & dashboarding
-Built by: Mayank Shekhar
+## 📸 Output Gallery
+
+- ✅ Confusion Matrix
+- ✅ PCA 3D Plot
+- ✅ Heatmap Animation
+- ✅ Feature Importance
+- ✅ WordClouds
+- ✅ Chatbot Predictions
+
+📂 All included in the Visualizations Section
+
+## 🙌 Credits
+
+- Dataset: IMDb Dataset from Hugging Face
+- ML Engineered & Visualized by: Mayank Shekhar
+
 🚀 This project is part of my AI journey — aiming to combine technical skill, visual storytelling, and intelligent interactivity to build real-world ML solutions.
