@@ -92,8 +92,6 @@ Shows most influential words contributing to classification.
 
 ![Feature Importance](https://github.com/user-attachments/assets/a241079b-6732-4991-a5a8-01c2641f3cda)
 
-### 📌 Dual WordClouds
-Common words in Positive vs Negative reviews.
 
 ## 🤖 Chatbot Interface
 
